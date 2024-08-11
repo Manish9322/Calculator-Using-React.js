@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+/* MY CSS STARTS FROM HERE  */
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+*, *::before, *::after {
+  box-sizing:border-box;
+}
+
+@keyframes flowEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body{
+  margin: 0;
+  background: linear-gradient(90deg, #34e7ff, #d2a7ff, #61a9fb);
+  background-size: 200% 100%;
+  animation: flowEffect 3s ease infinite;
+}
+
+
+.calculator-grid{
+  display: grid;
+  justify-content: center;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+
+}
+
+.calculator-grid > button{
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 30px;
+  margin: 7px;
+  background-color: rgba(255, 255, 255, .75);
+  filter: drop-shadow(5px 5px 10px); 
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+  background-color: rgba(255, 255, 255, .9);
+}
+
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1 / -1;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #34e7ff, #d2a7ff, #61a9fb);
+  animation: flowEffect 3s ease infinite;
+  background-size: 200% 100%;
+  /* background-color: #aeaeae; */
+  opacity: 0.7;
+  filter: drop-shadow(5px 5px 10px ); 
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+
+}
+
+.output .previous-operand{
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+
+.output .current-operand{
+  color: white;
+  font-size: 2.5rem;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: 100% 100%;
+  }
+
+  .calculator-grid {
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  }
+
+  .calculator-grid > button {
+    font-size: 1.5rem;
+  }
+
+  .output {
+    padding: 0.5rem;
+  }
+
+  .output .previous-operand {
+    font-size: 1rem; 
+  }
+
+  .output .current-operand {
+    font-size: 2rem;
+  }
+}
