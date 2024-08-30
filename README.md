@@ -1,5 +1,7 @@
 # Calculator-Using-React.js 
 A React.js calculator with stunning visuals and seamless responsiveness. It ensures accurate calculations and an intuitive user experience. Enhanced with modern design, it caters to all your mathematical needs efficiently.
+<br>
+<br>
 ![alt text](Calculator.png)
 
 # Getting Started with Create React App
